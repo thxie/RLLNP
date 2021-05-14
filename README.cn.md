@@ -61,20 +61,20 @@ java -jar RLLNP.jar -d PPI_result1.csv PPI_result2.csv
 #### 实例教程【文件位于test文件夹】
 
 
-1. 准备Prey文库信息和Bait文库信息，需要CSV文件（注意尽量不要有中文字符）。
+（1）准备Prey文库信息和Bait文库信息，需要CSV文件（注意尽量不要有中文字符）。
 
 >CSV文件中第一列应为【基因名称】，第二列应为【基因序列】，并且【无需表头】。
 >
 >例子可以参照【test】文件夹中的【Prey_test.csv】和【Bait_test.csv】文件。
 
-2.利用RLLNP软件检查Prey文库文件和Bait文库文件中是否存在【基因名重复问题】或【基因末端序列重复问题】。
+（2）利用RLLNP软件检查Prey文库文件和Bait文库文件中是否存在【基因名重复问题】或【基因末端序列重复问题】。
                                                                                                                                                                                                                                                                                                
 ```
 // 质检结果会直接输出至控制台，可以用【>】符号进行IO重定向。
 java -jar RLLNP.jar -a Prey_test.csv -b Bait_test.csv
 ```
 
-3.1 利用半全局比对算法和唯一比对算法获取RLL-Y2H测序数据中的Prey文库和Bait文库之间的蛋白互作信息。
+（3.1）利用半全局比对算法和唯一比对算法获取RLL-Y2H测序数据中的Prey文库和Bait文库之间的蛋白互作信息。
 
 >文库质检步骤【2】可以与比对步骤一起进行，若Prey文库信息或Bait文库信息有误，则不会进行下面的比对步骤。
 
@@ -82,13 +82,13 @@ java -jar RLLNP.jar -a Prey_test.csv -b Bait_test.csv
 // 该命令下【-o】参数携带有默认属性：【./output/[-f参数所携带的文件名]_PPIResult.csv】
 java -jar RLLNP.jar -a Prey_test.csv -b Bait_test.csv -f test.fq.gz 
 ```
-3.2 同样可以加入【-o】参数来指定输出文件名
+（3.2）同样可以加入【-o】参数来指定输出文件名
 
 ```
 java -jar RLLNP.jar -a Prey_test.csv -b Bait_test.csv -f test.fq.gz -o ./output/test_PPIResult2.csv
 ```
 
-4. 用以上的两组PPI结果文件来进行结果合并【test.fq.gz_PPIResult.csv】和【test_PPIResult2.csv】
+（4）用以上的两组PPI结果文件来进行结果合并【test.fq.gz_PPIResult.csv】和【test_PPIResult2.csv】
 
 >先准备【merge.txt】文件，用于存储两个PPI结果文件的【路径】
 
