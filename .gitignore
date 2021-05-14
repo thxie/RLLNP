@@ -1,0 +1,9 @@
+# .iml为IDEA自动生成的文件，不需要被管理
+*.iml
+
+# src/resources 和 src/test 也都不需要被管理
+src/resources
+src/test
+
+# Maven编译生成的target文件也不需要被管理
+target/
