@@ -9,8 +9,11 @@
 
 #### 安装教程
 
-1. 下载【RLLNP.jar】至本地，即可运行，无需安装；
-2. 运行需要本地环境有Java开发工具包【JDK】或Java运行环境【JRE】（version >= 8）;
+1. 下载【RLLNP.jar】至本地，无需安装；
+2. 运行需要本地环境有Java开发工具包【JDK】或Java运行环境【JRE】;
+
+>RLLNP文件是使用JDK8来编写，请本地运行环境版本大于等于JDK8
+
 3. 使用JAVA虚拟机【JVM】中的【java -jar】命令进行运行即可；
 
 
@@ -20,14 +23,12 @@
 // 1.查看用户文档
 java -jar RLLNP.jar
 java -jar RLLNP.jar -h
-java -jar RLLNP.jar --help
 ```
 
 
 ```
 // 2.查看软件版本
 java -jar RLLNP.jar -v
-java -jar RLLNP.jar --version
 ```
 
 ```
@@ -38,16 +39,16 @@ java -jar RLLNP.jar -a Prey.csv -b Bait.csv
 
 ```
 // 4.利用半全局比对算法获取RLL-Y2H测序文件中的PPI信息
-java -jar RLLNP.jar -a Prey.csv -b Bait.csv -f sequencing.fastq
-java -jar RLLNP.jar -a Prey.csv -b Bait.csv -f sequencing.fastq.gz
-java -jar RLLNP.jar -a Prey.csv -b Bait.csv -t 8 -f sequencing.fq  
-java -jar RLLNP.jar -a Prey.csv -b Bait.csv -f sequencing.fq.gz -o PPI.csv
+java -jar RLLNP.jar -a Prey.csv -b Bait.csv -f test.fastq
+java -jar RLLNP.jar -a Prey.csv -b Bait.csv -f test.fastq.gz
+java -jar RLLNP.jar -a Prey.csv -b Bait.csv -t 8 -f test.fq  
+java -jar RLLNP.jar -a Prey.csv -b Bait.csv -f test.fq.gz -o PPI.csv
 ```
 
 
 ```
 // 5.将多个PPI结果文件合并
-java -jar RLLNP.jar -m merge.txt -o Total_PPI_result.csv
+java -jar RLLNP.jar -m merge.txt
 ```
 
 ```
@@ -57,13 +58,12 @@ java -jar RLLNP.jar -d PPI_result1.csv PPI_result2.csv
 
 
 
-#### 实例教程
+#### 实例教程【文件位于test文件夹】
 
- **实例文件在【test】文件夹中：** 
 
 1. 准备Prey文库信息和Bait文库信息，需要CSV文件（注意尽量不要有中文字符）。
 
->CSV文件中第一列应为基因名称，第二列应为基因序列，并且无需表头。
+>CSV文件中第一列应为【基因名称】，第二列应为【基因序列】，并且【无需表头】。
 >
 >例子可以参照【test】文件夹中的【Prey_test.csv】和【Bait_test.csv】文件。
 
@@ -109,13 +109,15 @@ java -jar RLLNP.jar -m merge.txt -o Total.csv
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0514/163951_48580ddc_7810647.png "屏幕截图.png")
 
->（1）参数【-n】是指半全局比对算法中，reads与标记序列MmeI-ATTL-MmeI比对时允许错配的数量，默认允许错配8次；
+>（1）参数【-n】是指半全局比对算法中，reads与标记序列 MmeI-ATTL-MmeI 比对时允许错配的数量，默认允许错配8次；
 >
->（2）参数【-l】是指唯一比对算法中，截取标记序列MmeI-ATTL-MmeI两端【13pb】数量的子序列对，将两端的子序列分别和质检好的文库序列末端的【13bp】进行唯一比对，只留下能够分别与Prey文库和Bait文库唯一比对的子序列对，默认接触数量为【13bp】
+>（2）参数【-l】是指唯一比对算法中，截取标记序列 MmeI-ATTL-MmeI 两端【13pb】数量的子序列对，将两端的子序列分别和质检好的文库序列末端的【13bp】进行唯一比对，只留下能够分别与Prey文库和Bait文库唯一比对的子序列对，默认接触数量为【13bp】
 
 #### 注意事项
 
-1.输出的PPI结果文件是CSV格式的，并且编码格式为【utf-8】。若用EXCEL打开中文字符有可能会出现乱码现象，可以先自行转码或尽量不要再基因名中出现中文字符。
+1.Prey文库和Bait文库的文库信息文件无需表头，如果有表头会运行时报错。
+
+2.输出的PPI结果文件是CSV格式的，并且编码格式为【utf-8】。若用EXCEL打开中文字符有可能会出现乱码现象，可以先自行转码或尽量不要再基因名中出现中文字符。
 
 
 
