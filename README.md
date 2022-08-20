@@ -16,9 +16,9 @@ The RLLNP tool mainly uses the semi-global alignment algorithm and the unique al
 
 **Quick instructions**
 
-     // 1. View user documentation
-     java -jar RLLNP.jar
-     java -jar RLLNP.jar -h
+    // 1. View user documentation
+    java -jar RLLNP.jar
+    java -jar RLLNP.jar -h
 
     // 2.  View software version
     java -jar RLLNP.jar -v
@@ -51,9 +51,7 @@ For example, please refer to the [pre_test. CSV] and [bait_test. CSV] files in t
     // The quality inspection results will be directly output to the console. You can use the [>] symbol to redirect IO.
     java -jar RLLNP. jar -a Prey_ test. csv -b Bait_ test.csv
 
-3.1. Use the semi global alignment algorithm and the unique alignment algorithm were used to obtain the protein interaction information between the prey library and the bait library in the RLL-Y2H sequencing data.
-
-The library quality inspection step [2] can be carried out together with the comparison step. If the pre library information or the bait library information is wrong, the following comparison step will not be carried out.
+3.1. Use the semi global alignment algorithm and the unique alignment algorithm were used to obtain the protein interaction information between the prey library and the bait library in the RLL-Y2H sequencing data. (The library quality inspection step [2] can be carried out together with the comparison step. If the pre library information or the bait library information is wrong, the following comparison step will not be carried out.)
 
     // The [-o] parameter of this command carries the default attribute: [./output/[-f parameter carries the file name]_ PPIsResult.csv]
     java -jar RLLNP. jar -a Prey_ test. csv -b Bait_ test. csv -f test.fq. gz
