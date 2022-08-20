@@ -12,7 +12,7 @@ The RLLNP tool mainly uses the semi-global alignment algorithm and the unique al
 2.The Java Development Kit and Java Runtime Environment are required for local environment.
 (The RLLNP file is written using JDK8, please make the local running environment version greater than or equal to JDK8)
 
-3.Use the [Java - jar] command in the Java Virtual Machine to run.
+3.Use the [Java -jar] command in the Java Virtual Machine to run.
 
 **Quick instructions**
 
@@ -44,29 +44,29 @@ The RLLNP tool mainly uses the semi-global alignment algorithm and the unique al
 
 1.CSV files are required to prepare the prey library and the bait library information (please try not to have Chinese characters).
 The first column in the CSV file should be gene name, the second column should be gene sequence, and no header required.
-For example, please refer to the [pre_test. CSV] and [bait_test. CSV] files in the test folder.
+For example, please refer to the [pre_test.CSV] and [bait_test.CSV] files in the test folder.
 
 2.Use RLLNP tool to check whether there is gene name duplication problem or gene end sequence duplication problem in the prey library file and the bait library file.
 
     // The quality inspection results will be directly output to the console. You can use the [>] symbol to redirect IO.
-    java -jar RLLNP. jar -a Prey_ test. csv -b Bait_ test.csv
+    java -jar RLLNP.jar -a Prey_test. csv -b Bait_test.csv
 
 3.1. Use the semi global alignment algorithm and the unique alignment algorithm were used to obtain the protein interaction information between the prey library and the bait library in the RLL-Y2H sequencing data. (The library quality inspection step [2] can be carried out together with the comparison step. If the pre library information or the bait library information is wrong, the following comparison step will not be carried out.)
 
-    // The [-o] parameter of this command carries the default attribute: [./output/[-f parameter carries the file name]_ PPIsResult.csv]
-    java -jar RLLNP. jar -a Prey_ test. csv -b Bait_ test. csv -f test.fq. gz
+    // The [-o] parameter of this command carries the default attribute: [./output/[-f parameter carries the file name]_PPIsResult.csv]
+    java -jar RLLNP.jar -a Prey_test.csv -b Bait_test.csv -f test.fq.gz
 
 3.2. The [-o] parameter can also be added to specify the output file name
 
-    java -jar RLLNP. jar -a Prey_ test. csv -b Bait_ test. csv -f test.fq. gz -o ./output/test_ PPIsResult2.csv
+    java -jar RLLNP.jar -a Prey_test.csv -b Bait_test.csv -f test.fq.gz -o ./output/test_PPIsResult2.csv
 
 4.Use the above two groups of PPIs result files to merge the results [test.fq.gz_PPIsResult.csv] and [test_PPIsResult2.csv]
 
 First prepare the [merge. txt] file to store the [path] of the two PPIs result files:
 
     // merge. txt file is as follows:
-    [absolute path / relative path] / test.fq.gz_ PPIsResult.csv
-    [absolute path / relative path] / test_ PPIsResult2.csv
+    [absolute path / relative path] / test.fq.gz_PPIsResult.csv
+    [absolute path / relative path] / test_PPIsResult2.csv
 
 Then use the [-m] parameter to merge:
 
