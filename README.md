@@ -1,13 +1,17 @@
 **Introduce**
+
 The RLLNP tool mainly uses the semi-global alignment algorithm and the unique alignment algorithm to obtain the protein interaction information between the prey library and the bait library in the RLL-Y2H sequencing data.
 
 ![image](https://user-images.githubusercontent.com/45482470/185730889-fc675dc0-a80e-433d-ab1d-339bd66fa344.png)
 
 
 **Installation tutorial**
+
 1.Download [RLLNP.jar] to the local without installation.
+
 2.The Java Development Kit and Java Runtime Environment are required for local environment.
 (The RLLNP file is written using JDK8, please make the local running environment version greater than or equal to JDK8)
+
 3.Use the [Java - jar] command in the Java Virtual Machine to run.
 
 **Quick instructions**
@@ -35,7 +39,9 @@ The RLLNP tool mainly uses the semi-global alignment algorithm and the unique al
     java -jar RLLNP.jar -d PPIs_result1.csv PPIs_result2.csv
 
 **Example tutorial**
+
 (The file is located in the test folder)
+
 1.CSV files are required to prepare the prey library and the bait library information (please try not to have Chinese characters).
 The first column in the CSV file should be gene name, the second column should be gene sequence, and no header required.
 For example, please refer to the [pre_test. CSV] and [bait_test. CSV] files in the test folder.
@@ -70,6 +76,7 @@ Then use the [-m] parameter to merge
     java -jar RLLNP.jar -m merge.txt -o Total.csv
 
 **Parameter description**
+
 ![image](https://user-images.githubusercontent.com/45482470/185730916-be17c777-7d9c-4ac6-824a-85f8c8e92c61.png)
 
 Parameter [-n] refers to the number of mismatches allowed when the reads are aligned with the marker sequence _MmeI-ALLT-MmeI_ in the semi global alignment algorithm. By default, 8 mismatches are allowed.
