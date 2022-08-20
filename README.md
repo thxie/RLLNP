@@ -77,9 +77,9 @@ Then use the [-m] parameter to merge:
 
 ![image](https://user-images.githubusercontent.com/45482470/185730916-be17c777-7d9c-4ac6-824a-85f8c8e92c61.png)
 
-1、Parameter [-n] refers to the number of mismatches allowed when the reads are aligned with the marker sequence _MmeI-ALLT-MmeI_ in the semi global alignment algorithm. By default, 8 mismatches are allowed.
+1.Parameter [-n] refers to the number of mismatches allowed when the reads are aligned with the marker sequence _MmeI-ALLT-MmeI_ in the semi global alignment algorithm. By default, 8 mismatches are allowed.
 
-2、Parameter [-l] refers to that in the unique alignment algorithm, the number of subsequence pairs at both ends of the marker sequence _MmeI-ATTL-MmeI_ is intercepted, and the subsequences at both ends are uniquely aligned with the [13bp] at the end of the library sequence after quality inspection. Only the subsequence pairs that can be uniquely aligned with the prey library and the bait library are left. The default contact number is [13bp].
+2.Parameter [-l] refers to that in the unique alignment algorithm, the number of subsequence pairs at both ends of the marker sequence _MmeI-ATTL-MmeI_ is intercepted, and the subsequences at both ends are uniquely aligned with the [13bp] at the end of the library sequence after quality inspection. Only the subsequence pairs that can be uniquely aligned with the prey library and the bait library are left. The default contact number is [13bp].
 
 **Note**
 
