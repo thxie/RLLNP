@@ -48,14 +48,14 @@ For example, please refer to the [pre_test. CSV] and [bait_test. CSV] files in t
 
 2.Use RLLNP tool to check whether there is gene name duplication problem or gene end sequence duplication problem in the prey library file and the bait library file.
 
-    //The quality inspection results will be directly output to the console. You can use the [>] symbol to redirect IO.
+    // The quality inspection results will be directly output to the console. You can use the [>] symbol to redirect IO.
     java -jar RLLNP. jar -a Prey_ test. csv -b Bait_ test.csv
 
 3.1. Use the semi global alignment algorithm and the unique alignment algorithm were used to obtain the protein interaction information between the prey library and the bait library in the RLL-Y2H sequencing data.
 
 The library quality inspection step [2] can be carried out together with the comparison step. If the pre library information or the bait library information is wrong, the following comparison step will not be carried out.
 
-    //The [-o] parameter of this command carries the default attribute: [./output/[-f parameter carries the file name]_ PPIsResult.csv]
+    // The [-o] parameter of this command carries the default attribute: [./output/[-f parameter carries the file name]_ PPIsResult.csv]
     java -jar RLLNP. jar -a Prey_ test. csv -b Bait_ test. csv -f test.fq. gz
 
 3.2. The [-o] parameter can also be added to specify the output file name
@@ -64,24 +64,24 @@ The library quality inspection step [2] can be carried out together with the com
 
 4.Use the above two groups of PPIs result files to merge the results [test.fq.gz_PPIsResult.csv] and [test_PPIsResult2.csv]
 
-First prepare the [merge. txt] file to store the [path] of the two PPIs result files
+First prepare the [merge. txt] file to store the [path] of the two PPIs result files:
 
     // merge. txt file is as follows:
     [absolute path / relative path] / test.fq.gz_ PPIsResult.csv
     [absolute path / relative path] / test_ PPIsResult2.csv
 
-Then use the [-m] parameter to merge
+Then use the [-m] parameter to merge:
 
-    //If the [-o] parameter is not used, the default output result file path is [./output/total_ppi_results.csv]
+    // If the [-o] parameter is not used, the default output result file path is [./output/total_ppi_results.csv]
     java -jar RLLNP.jar -m merge.txt -o Total.csv
 
 **Parameter description**
 
 ![image](https://user-images.githubusercontent.com/45482470/185730916-be17c777-7d9c-4ac6-824a-85f8c8e92c61.png)
 
-Parameter [-n] refers to the number of mismatches allowed when the reads are aligned with the marker sequence _MmeI-ALLT-MmeI_ in the semi global alignment algorithm. By default, 8 mismatches are allowed.
+1、Parameter [-n] refers to the number of mismatches allowed when the reads are aligned with the marker sequence _MmeI-ALLT-MmeI_ in the semi global alignment algorithm. By default, 8 mismatches are allowed.
 
-Parameter [-l] refers to that in the unique alignment algorithm, the number of subsequence pairs at both ends of the marker sequence _MmeI-ATTL-MmeI_ is intercepted, and the subsequences at both ends are uniquely aligned with the [13bp] at the end of the library sequence after quality inspection. Only the subsequence pairs that can be uniquely aligned with the prey library and the bait library are left. The default contact number is [13bp].
+2、Parameter [-l] refers to that in the unique alignment algorithm, the number of subsequence pairs at both ends of the marker sequence _MmeI-ATTL-MmeI_ is intercepted, and the subsequences at both ends are uniquely aligned with the [13bp] at the end of the library sequence after quality inspection. Only the subsequence pairs that can be uniquely aligned with the prey library and the bait library are left. The default contact number is [13bp].
 
 **Note**
 
