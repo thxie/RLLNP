@@ -70,7 +70,7 @@ Then use the [-m] parameter to merge
     java -jar RLLNP.jar -m merge.txt -o Total.csv
 
 **Parameter description**
-![](RLLNP_md_files/2927d090-2049-11ed-9958-859b572e9e9d_20220820133010.jpeg?v=1&type=image&token=V1:ghwKGWoqifXeIn9_xQ-sJy4UbydoSi3VfOL-YH9ivLU)
+![image](https://user-images.githubusercontent.com/45482470/185730916-be17c777-7d9c-4ac6-824a-85f8c8e92c61.png)
 
 Parameter [-n] refers to the number of mismatches allowed when the reads are aligned with the marker sequence _MmeI-ALLT-MmeI_ in the semi global alignment algorithm. By default, 8 mismatches are allowed.
 
