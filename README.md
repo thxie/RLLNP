@@ -1,6 +1,8 @@
 **Introduce**
 The RLLNP tool mainly uses the semi-global alignment algorithm and the unique alignment algorithm to obtain the protein interaction information between the prey library and the bait library in the RLL-Y2H sequencing data.
-![](RLLNP_md_files/12dc43c0-2049-11ed-9958-859b572e9e9d_20220820132933.jpeg?v=1&type=image&token=V1:dMKUn1ocWo6fP_nDsFuedujxtkXkdNfu3UGfrWdiPo4)
+
+![image](https://user-images.githubusercontent.com/45482470/185730889-fc675dc0-a80e-433d-ab1d-339bd66fa344.png)
+
 
 **Installation tutorial**
 1.Download [RLLNP.jar] to the local without installation.
